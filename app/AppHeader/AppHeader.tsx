@@ -18,7 +18,7 @@ function AppLogo() {
                 <AiFillProduct className="text-xl" />
             </div>
             <div className="flex items-center gap-1 text-left text-sm leading-right">
-                <span className="truncate font-semibold text-[24px]">Inevntory</span>
+                <span className="truncate font-semibold text-[24px]">Inventory</span>
             </div>
         </div>
     )
