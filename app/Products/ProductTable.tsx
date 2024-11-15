@@ -12,6 +12,8 @@ import {
     flexRender,
     getCoreRowModel,
     getPaginationRowModel,
+    SortingState,
+    getSortedRowModel,
     useReactTable,
 } from "@tanstack/react-table";
 import {
@@ -46,12 +48,18 @@ export function ProductTable<TData, TValue>({
         pageSize: 10,
     });
 
+    const [sorting, setSorting] = useState<SortingState>([])
+
     const table = useReactTable({
         data,
         columns,
         state: {
             pagination,
+            sorting,
         },
+        onSortingChange: setSorting,
+        getSortedRowModel: getSortedRowModel(),
+
         onPaginationChange: setPagination,
         getCoreRowModel: getCoreRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
